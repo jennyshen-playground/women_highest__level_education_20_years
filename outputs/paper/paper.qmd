@@ -18,8 +18,24 @@ bibliography: references.bib
 #| warning: false
 #| message: false
 
+#### Initialize quarto workspace by reading csv's ####
 library(tidyverse)
-library(palmerpenguins)
+library(here)
+
+gss2000_cleaned <- read.csv(here::here("outputs/data/gss2000_cleaned.csv"))
+gss2002_cleaned <- read.csv(here::here("outputs/data/gss2002_cleaned.csv"))
+gss2004_cleaned <- read.csv(here::here("outputs/data/gss2004_cleaned.csv"))
+gss2006_cleaned <- read.csv(here::here("outputs/data/gss2006_cleaned.csv"))
+gss2008_cleaned <- read.csv(here::here("outputs/data/gss2008_cleaned.csv"))
+gss2010_cleaned <- read.csv(here::here("outputs/data/gss2010_cleaned.csv"))
+gss2012_cleaned <- read.csv(here::here("outputs/data/gss2012_cleaned.csv"))
+gss2014_cleaned <- read.csv(here::here("outputs/data/gss2014_cleaned.csv"))
+gss2016_cleaned <- read.csv(here::here("outputs/data/gss2016_cleaned.csv"))
+gss2018_cleaned <- read.csv(here::here("outputs/data/gss2018_cleaned.csv"))
+gss2021_cleaned <- read.csv(here::here("outputs/data/gss2021_cleaned.csv"))
+
+
+
 ```
 
 
