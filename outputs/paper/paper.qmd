@@ -41,21 +41,23 @@ merged_gss <- read.csv(here::here("outputs/data/merged_gss.csv"))
 ```{r}
 library(tidyverse) 
 
-## kind of an ugly graph buuuut yea ##
+## mean education level over 20 yrs ##
 
-merged_gss |> group_by(Year) |> count(Highest_Educ_Level) |>
-  ggplot(aes(x = Year, y = n, color = Highest_Educ_Level)) +
+merged_gss |> group_by(Year) |> summarize(mean= mean(Highest_Educ_Level, na.rm = TRUE)) |>
+  ggplot(aes(x = Year, y = mean)) +
   geom_point() +
   theme(axis.text.x = element_text(angle = 45, vjust = 0.9, hjust=1)) +
   labs(
-    title = "Year 2000"
+    title = "Mean highest education level of Women over 20 Years",
+    x = "Year",
+    y = "Mean Educ Level %"
   ) 
 
 ```
 ```{r}
 library(tidyverse) 
 
-## kind of an ugly graph buuuut yea ##
+## mean occ. prestige pct over 20 years ##
 
 merged_gss |> group_by(Year) |> summarize(mean = mean(Occupational_Prestige_Pct, na.rm = TRUE)) |>
   ggplot(aes(x = Year, y = mean)) +
