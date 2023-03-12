@@ -34,7 +34,38 @@ gss2016_cleaned <- read.csv(here::here("outputs/data/gss2016_cleaned.csv"))
 gss2018_cleaned <- read.csv(here::here("outputs/data/gss2018_cleaned.csv"))
 gss2021_cleaned <- read.csv(here::here("outputs/data/gss2021_cleaned.csv"))
 
+merged_gss <- read.csv(here::here("outputs/data/merged_gss.csv"))
 
+```
+
+```{r}
+library(tidyverse) 
+
+## kind of an ugly graph buuuut yea ##
+
+merged_gss |> group_by(Year) |> count(Highest_Educ_Level) |>
+  ggplot(aes(x = Year, y = n, color = Highest_Educ_Level)) +
+  geom_point() +
+  theme(axis.text.x = element_text(angle = 45, vjust = 0.9, hjust=1)) +
+  labs(
+    title = "Year 2000"
+  ) 
+
+```
+```{r}
+library(tidyverse) 
+
+## kind of an ugly graph buuuut yea ##
+
+merged_gss |> group_by(Year) |> summarize(mean = mean(Occupational_Prestige_Pct, na.rm = TRUE)) |>
+  ggplot(aes(x = Year, y = mean)) +
+  geom_line() +
+  theme(axis.text.x = element_text(angle = 45, vjust = 0.9, hjust=1)) +
+  labs(
+    title = "Occupational Prestige of Women over 20 Years",
+    x = "Year",
+    y = "Mean Occ. Prest. %"
+  ) 
 
 ```
 

@@ -15,7 +15,7 @@ library(here)
 
 #### Clean data ####
 ### First, select variables corresponding to occupational prestige, highest education level, happiness, spouse work status and sex of respondent ###
-gss2000_cleaned <- gss2000_data |> select(prestg10, educ, happy, spwrksta, sex)
+gss2000_cleaned <- gss2000_data |> select(prestg10, educ, happy, spwrksta, sex, na.rm)
 gss2002_cleaned <- gss2002_data |> select(prestg10, educ, happy, spwrksta, sex)
 gss2004_cleaned <- gss2004_data |> select(prestg10, educ, happy, spwrksta, sex)
 gss2006_cleaned <- gss2006_data |> select(prestg10, educ, happy, spwrksta, sex)
@@ -587,6 +587,84 @@ gss2016_cleaned <- gss2016_cleaned |> select(-c(spwrksta))
 gss2018_cleaned <- gss2018_cleaned |> select(-c(spwrksta))
 gss2021_cleaned <- gss2021_cleaned |> select(-c(spwrksta))
 
+### Add years to each cleaned dataset ###
+year_2000 <- c(rep("2000", 1588))
+gss2000_cleaned <- cbind(gss2000_cleaned, year_2000)
+gss2000_cleaned <- gss2000_cleaned |> rename(
+  Year = year_2000
+)
+
+year_2002 <- c(rep("2002", 1537))
+gss2002_cleaned <- cbind(gss2002_cleaned, year_2002)
+gss2002_cleaned <- gss2002_cleaned |> rename(
+  Year = year_2002
+)
+
+year_2004 <- c(rep("2004", 1532))
+gss2004_cleaned <- cbind(gss2004_cleaned, year_2004)
+gss2004_cleaned <- gss2004_cleaned |> rename(
+  Year = year_2004
+)
+
+year_2006 <- c(rep("2006", 2507))
+gss2006_cleaned <- cbind(gss2006_cleaned, year_2006)
+gss2006_cleaned <- gss2006_cleaned |> rename(
+  Year = year_2006
+)
+
+year_2008 <- c(rep("2008", 1093))
+gss2008_cleaned <- cbind(gss2008_cleaned, year_2008)
+gss2008_cleaned <- gss2008_cleaned |> rename(
+  Year = year_2008
+)
+
+year_2010 <- c(rep("2010", 1153))
+gss2010_cleaned <- cbind(gss2010_cleaned, year_2010)
+gss2010_cleaned <- gss2010_cleaned |> rename(
+  Year = year_2010
+)
+
+year_2012 <- c(rep("2012", 1089))
+gss2012_cleaned <- cbind(gss2012_cleaned, year_2012)
+gss2012_cleaned <- gss2012_cleaned |> rename(
+  Year = year_2012
+)
+
+year_2014 <- c(rep("2014", 1397))
+gss2014_cleaned <- cbind(gss2014_cleaned, year_2014)
+gss2014_cleaned <- gss2014_cleaned |> rename(
+  Year = year_2014
+)
+
+year_2016 <- c(rep("2016", 1591))
+gss2016_cleaned <- cbind(gss2016_cleaned, year_2016)
+gss2016_cleaned <- gss2016_cleaned |> rename(
+  Year = year_2016
+)
+
+year_2018 <- c(rep("2018", 1296))
+gss2018_cleaned <- cbind(gss2018_cleaned, year_2018)
+gss2018_cleaned <- gss2018_cleaned |> rename(
+  Year = year_2018
+)
+
+year_2021 <- c(rep("2021", 2204))
+gss2021_cleaned <- cbind(gss2021_cleaned, year_2021)
+gss2021_cleaned <- gss2021_cleaned |> rename(
+  Year = year_2021
+)
+
+## Create a master merged GSS data frame ##
+merged_gss <- rbind(gss2000_cleaned, gss2002_cleaned)
+merged_gss <- rbind(merged_gss, gss2004_cleaned)
+merged_gss <- rbind(merged_gss, gss2006_cleaned)
+merged_gss <- rbind(merged_gss, gss2008_cleaned)
+merged_gss <- rbind(merged_gss, gss2010_cleaned)
+merged_gss <- rbind(merged_gss, gss2012_cleaned)
+merged_gss <- rbind(merged_gss, gss2014_cleaned)
+merged_gss <- rbind(merged_gss, gss2016_cleaned)
+merged_gss <- rbind(merged_gss, gss2018_cleaned)
+merged_gss <- rbind(merged_gss, gss2021_cleaned)
 
 #### Save data ####
 write_csv(gss2000_cleaned, here::here("outputs/data/gss2000_cleaned.csv"))
@@ -600,5 +678,6 @@ write_csv(gss2014_cleaned, here::here("outputs/data/gss2014_cleaned.csv"))
 write_csv(gss2016_cleaned, here::here("outputs/data/gss2016_cleaned.csv"))
 write_csv(gss2018_cleaned, here::here("outputs/data/gss2018_cleaned.csv"))
 write_csv(gss2021_cleaned, here::here("outputs/data/gss2021_cleaned.csv"))
+write_csv(merged_gss, here::here("outputs/data/merged_gss.csv"))
 
 
