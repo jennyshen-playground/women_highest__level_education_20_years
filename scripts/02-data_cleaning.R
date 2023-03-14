@@ -340,7 +340,9 @@ merged_gss <- rbind(merged_gss, gss2012_cleaned)
 merged_gss <- rbind(merged_gss, gss2014_cleaned)
 merged_gss <- rbind(merged_gss, gss2016_cleaned)
 merged_gss <- rbind(merged_gss, gss2018_cleaned)
+merged_gss <- bind_rows(merged_gss, gss2021_cleaned)
 merged_gss <- rbind(merged_gss, gss2021_cleaned)
+
 
 #### Save data ####
 write_csv(gss2000_cleaned, here::here("outputs/data/gss2000_cleaned.csv"))
