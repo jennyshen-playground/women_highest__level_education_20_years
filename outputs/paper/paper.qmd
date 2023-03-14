@@ -46,7 +46,7 @@ library(tidyverse)
 
 merged_gss |> group_by(Year) |> summarize(mean= mean(Highest_Educ_Level, na.rm = TRUE)) |>
   ggplot(aes(x = Year, y = mean)) +
-  geom_point() +
+  geom_line(group = 1) +
   theme(axis.text.x = element_text(angle = 45, vjust = 0.9, hjust=1)) +
   labs(
     title = "Mean highest education level of Women over 20 Years",
@@ -62,7 +62,7 @@ library(tidyverse)
 
 merged_gss |> group_by(Year) |> summarize(mean = mean(Occupational_Prestige_Pct, na.rm = TRUE)) |>
   ggplot(aes(x = Year, y = mean)) +
-  geom_line() +
+  geom_line(group = 1) +
   theme(axis.text.x = element_text(angle = 45, vjust = 0.9, hjust=1)) +
   labs(
     title = "Occupational Prestige of Women over 20 Years",
@@ -70,6 +70,15 @@ merged_gss |> group_by(Year) |> summarize(mean = mean(Occupational_Prestige_Pct,
     y = "Mean Occ. Prest. %"
   ) 
 
+merged_gss |> group_by(Year) |> count(Happiness) |>
+  ggplot(aes(x = Year, y = n, fill = Happiness)) +
+  geom_col(position = "dodge") +
+  theme(axis.text.x = element_text(angle = 45, vjust = 0.9, hjust=1)) +
+  labs(
+    title = "Womens Happiness over 20 Years",
+    x = "Year",
+    y = "Count"
+  )
 ```
 
 

@@ -342,8 +342,6 @@ merged_gss <- rbind(merged_gss, gss2016_cleaned)
 merged_gss <- rbind(merged_gss, gss2018_cleaned)
 merged_gss <- rbind(merged_gss, gss2021_cleaned)
 
-merged_gss |> group_by(Year) |> summarize(mean = mean(Highest_Educ_Level, na.rm = TRUE))
-
 #### Save data ####
 write_csv(gss2000_cleaned, here::here("outputs/data/gss2000_cleaned.csv"))
 write_csv(gss2002_cleaned, here::here("outputs/data/gss2002_cleaned.csv"))
