@@ -1,17 +1,20 @@
 ---
-title: "Women highest Level Education in 20 years"
-subtitle: "My subtitle if needed"
+title: "Women work education happiness lol"
+subtitle: "insert here lol"
 author: 
-  - First author
-  - Another author
-thanks: "Code and data are available at: LINK."
+  - Jenny Shen
+  - Joyce Xuan
+  - Jason Ngo
+thanks: "Code and data are available at: INSERT GITHUB."
 date: "`r Sys.time()`"
 date-format: "D MMMM YYYY"
-abstract: "First sentence. Second sentence. Third sentence. Fourth sentence."
-format: pdf
+format: 
+  pdf:
+    documentclass: article
+    geometry: margin = 1in
+    abstract: "hello"
 number-sections: true
 bibliography: references.bib
-hello
 ---
 
 ```{r}
@@ -34,12 +37,31 @@ gss2014_cleaned <- read.csv(here::here("outputs/data/gss2014_cleaned.csv"))
 gss2016_cleaned <- read.csv(here::here("outputs/data/gss2016_cleaned.csv"))
 gss2018_cleaned <- read.csv(here::here("outputs/data/gss2018_cleaned.csv"))
 gss2021_cleaned <- read.csv(here::here("outputs/data/gss2021_cleaned.csv"))
-
 merged_gss <- read.csv(here::here("outputs/data/merged_gss.csv"))
 
 ```
 
+# Introduction
+text goes here
+
+# Data
+
+## Data Source and Methodology
+text goes here
+
+## Attributes
+text goes here
+
+## Analysis
+text goes here
+
+### Mean Education Level from 2000 - 2021
 ```{r}
+#| label: fig-1
+#| fig-cap: caption goes here
+#| echo: false
+#| warning: false
+
 library(tidyverse) 
 
 ## mean education level over 20 yrs ##
@@ -53,10 +75,15 @@ merged_gss |> group_by(Year) |> summarize(mean= mean(Highest_Educ_Level, na.rm =
     x = "Year",
     y = "Mean Educ Level %"
   ) 
-
 ```
+text goes here
+
+### Mean Occupational Prestige from 2000 - 2021
 ```{r}
-library(tidyverse) 
+#| label: fig-2
+#| fig-cap: caption goes here
+#| echo: false
+#| warning: false
 
 ## mean occ. prestige pct over 20 years ##
 
@@ -69,6 +96,15 @@ merged_gss |> group_by(Year) |> summarize(mean = mean(Occupational_Prestige_Pct,
     x = "Year",
     y = "Mean Occ. Prest. %"
   ) 
+```
+text goes here
+
+### Women's Happiness from 2000 - 2021
+```{r}
+#| label: fig-1
+#| fig-cap: caption goes here
+#| echo: false
+#| warning: false
 
 merged_gss |> group_by(Year) |> count(Happiness) |>
   ggplot(aes(x = Year, y = n, fill = Happiness)) +
@@ -80,84 +116,27 @@ merged_gss |> group_by(Year) |> count(Happiness) |>
     y = "Count"
   )
 ```
-
-
-# Introduction
-
-You can and should cross-reference sections and sub-sections. For instance, @sec-data and @sec-first-point. 
-
-
-
-# Data {#sec-data}
-
-Our data is of penguins (@fig-bills).
-
-```{r}
-#| label: fig-bills
-#| fig-cap: Bills of penguins
-#| echo: false
-
-ggplot(penguins, aes(x = island, fill = species)) +
-  geom_bar(alpha = 0.8) +
-  scale_fill_manual(values = c("darkorange","purple","cyan4"),
-                    guide = "none") +
-  theme_minimal() +
-  facet_wrap(~species, ncol = 1) +
-  coord_flip()
-```
-
-Talk more about it.
-
-Also bills and their average (@fig-billssssss). (You can change the height and width, but don't worry about doing that until you have finished every other aspect of the paper - Quarto will try to make it look nice and the defaults usually work.)
-
-```{r}
-#| label: fig-billssssss
-#| fig-cap: More bills of penguins
-#| echo: false
-#| fig-width: 8
-#| fig-height: 4
-
-ggplot(penguins, aes(x = island, fill = species)) +
-  geom_bar(alpha = 0.8) +
-  scale_fill_manual(values = c("darkorange","purple","cyan4"),
-                    guide = "none") +
-  theme_minimal() +
-  facet_wrap(~species, ncol = 1) +
-  coord_flip()
-```
-
-Talk way more about it. 
-
-
-
-# Model
-
-$$
-Pr(\theta | y) = \frac{Pr(y | \theta) Pr(\theta)}{Pr(y)}
-$$ {#eq-bayes}
-
-@eq-bayes seems useful, eh?
-
-Here's a dumb example of how to use some references: In paper we run our analysis in `R` [@citeR]. We also use the `tidyverse` which was written by @thereferencecanbewhatever If we were interested in baseball data then @citeLahman could be useful. 
-
-We can use maths by including latex between dollar signs, for instance $\theta$.
-
+text goes here
 
 # Results
+sum up all 3 graphs here 
 
 # Discussion
 
-## First discussion point {#sec-first-point}
+## Womens Education Discussion
+jenny section
 
-If my paper were 10 pages, then should be be at least 2.5 pages. The discussion is a chance to show off what you know and what you learnt from all this. 
+## Womens Occupational Prestige Discussion
+joyce section
 
-## Second discussion point
+## Womens Happiness Discussion
+jason section
 
-## Third discussion point
+## Biases and Ethical Concerns
+jason
 
 ## Weaknesses and next steps
-
-Weaknesses and next steps should also be included.
+joyce
 
 \newpage
 
@@ -165,12 +144,9 @@ Weaknesses and next steps should also be included.
 
 # Appendix {-}
 
-
-# Additional details
-
+our survey is here lol
 
 \newpage
-
 
 # References
 
