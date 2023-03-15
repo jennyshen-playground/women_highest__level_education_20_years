@@ -101,7 +101,7 @@ text goes here
 
 ### Women's Happiness from 2000 - 2021
 ```{r}
-#| label: fig-1
+#| label: fig-3
 #| fig-cap: caption goes here
 #| echo: false
 #| warning: false
