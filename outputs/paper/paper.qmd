@@ -42,20 +42,27 @@ merged_gss <- read.csv(here::here("outputs/data/merged_gss.csv"))
 ```
 
 # Introduction
+
 text goes here
 
 # Data
 
 ## Data Source and Methodology
+
 text goes here
 
 ## Attributes
+
 text goes here
 
+## Terminology
+
 ## Analysis
+
 text goes here
 
 ### Mean Education Level from 2000 - 2021
+
 ```{r}
 #| label: fig-1
 #| fig-cap: caption goes here
@@ -76,9 +83,11 @@ merged_gss |> group_by(Year) |> summarize(mean= mean(Highest_Educ_Level, na.rm =
     y = "Mean Educ Level %"
   ) 
 ```
+
 text goes here
 
 ### Mean Occupational Prestige from 2000 - 2021
+
 ```{r}
 #| label: fig-2
 #| fig-cap: caption goes here
@@ -97,9 +106,11 @@ merged_gss |> group_by(Year) |> summarize(mean = mean(Occupational_Prestige_Pct,
     y = "Mean Occ. Prest. %"
   ) 
 ```
+
 text goes here
 
 ### Women's Happiness from 2000 - 2021
+
 ```{r}
 #| label: fig-3
 #| fig-cap: caption goes here
@@ -116,38 +127,55 @@ merged_gss |> group_by(Year) |> count(Happiness) |>
     y = "Count"
   )
 ```
+
 text goes here
 
 # Results
-sum up all 3 graphs here 
+
+sum up all 3 graphs here
 
 # Discussion
 
 ## Womens Education Discussion
+
 jenny section
 
 ## Womens Occupational Prestige Discussion
+
 joyce section
 
 ## Womens Happiness Discussion
+
 jason section
 
 ## Biases and Ethical Concerns
+
 jason
 
 ## Weaknesses and next steps
+
 joyce
 
 \newpage
 
 \appendix
 
-# Appendix {-}
+# Appendix {.unnumbered}
 
-our survey is here lol
+A link to our survey further exploring the relationship between happiness, occupational prestige level and education level can be found here: <https://forms.gle/iwFwnvGxsiewoKm46>
+
+\newpage
+
+![SurveyP1](survey1.png)
+![SurveyP2](survey2.png)
+![SurveyP3](survey3.png)
+![SurveyP4](survey4.png)
+![SurveyP5](survey5.png)
+![SurveyP6](survey6.png)
+![SurveyP7](survey7.png)
+![SurveyP8](survey8.png)
+
 
 \newpage
 
 # References
-
-
