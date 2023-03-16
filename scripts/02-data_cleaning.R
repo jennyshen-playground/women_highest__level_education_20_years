@@ -15,31 +15,17 @@ library(here)
 
 #### Clean data ####
 ### First, select variables corresponding to occupational prestige, highest education level, happiness, spouse work status and sex of respondent ###
-gss2000_cleaned <- gss2000_data |> select(prestg10, educ, happy, spwrksta, sex)
-gss2002_cleaned <- gss2002_data |> select(prestg10, educ, happy, spwrksta, sex)
-gss2004_cleaned <- gss2004_data |> select(prestg10, educ, happy, spwrksta, sex)
-gss2006_cleaned <- gss2006_data |> select(prestg10, educ, happy, spwrksta, sex)
-gss2008_cleaned <- gss2008_data |> select(prestg10, educ, happy, spwrksta, sex)
-gss2010_cleaned <- gss2010_data |> select(prestg10, educ, happy, spwrksta, sex)
-gss2012_cleaned <- gss2012_data |> select(prestg10, educ, happy, spwrksta, sex)
-gss2014_cleaned <- gss2014_data |> select(prestg10, educ, happy, spwrksta, sex)
-gss2016_cleaned <- gss2016_data |> select(prestg10, educ, happy, spwrksta, sex)
-gss2018_cleaned <- gss2018_data |> select(prestg10, educ, happy, spwrksta, sex)
-gss2021_cleaned <- gss2021_data |> select(prestg10, educ, happy, spwrksta, sex)
-
-### Next, we want to count the number of housewives there are. So, we will filter by male respondents with spouses that kept the house ###
-gss2000_housewife <- gss2000_cleaned |> filter(sex ==  1 & spwrksta == 7)
-gss2002_housewife <- gss2002_cleaned |> filter(sex ==  1 & spwrksta == 7)
-gss2004_housewife <- gss2004_cleaned |> filter(sex ==  1 & spwrksta == 7)
-gss2006_housewife <- gss2006_cleaned |> filter(sex ==  1 & spwrksta == 7)
-gss2008_housewife <- gss2008_cleaned |> filter(sex ==  1 & spwrksta == 7)
-gss2010_housewife <- gss2010_cleaned |> filter(sex ==  1 & spwrksta == 7)
-gss2012_housewife <- gss2012_cleaned |> filter(sex ==  1 & spwrksta == 7)
-gss2014_housewife <- gss2014_cleaned |> filter(sex ==  1 & spwrksta == 7)
-gss2016_housewife <- gss2016_cleaned |> filter(sex ==  1 & spwrksta == 7)
-gss2018_housewife <- gss2018_cleaned |> filter(sex ==  1 & spwrksta == 7)
-gss2021_housewife <- gss2021_cleaned |> filter(sex ==  1 & spwrksta == 7)
-
+gss2000_cleaned <- gss2000_data |> select(prestg10, educ, happy, sex)
+gss2002_cleaned <- gss2002_data |> select(prestg10, educ, happy, sex)
+gss2004_cleaned <- gss2004_data |> select(prestg10, educ, happy, sex)
+gss2006_cleaned <- gss2006_data |> select(prestg10, educ, happy, sex)
+gss2008_cleaned <- gss2008_data |> select(prestg10, educ, happy, sex)
+gss2010_cleaned <- gss2010_data |> select(prestg10, educ, happy, sex)
+gss2012_cleaned <- gss2012_data |> select(prestg10, educ, happy, sex)
+gss2014_cleaned <- gss2014_data |> select(prestg10, educ, happy, sex)
+gss2016_cleaned <- gss2016_data |> select(prestg10, educ, happy, sex)
+gss2018_cleaned <- gss2018_data |> select(prestg10, educ, happy, sex)
+gss2021_cleaned <- gss2021_data |> select(prestg10, educ, happy, sex)
 
 ### Rename columns so they are easier to read ###
 gss2000_cleaned <- gss2000_cleaned |> rename(
@@ -248,20 +234,6 @@ gss2014_cleaned <- gss2014_cleaned |> filter(sex ==  2)
 gss2016_cleaned <- gss2016_cleaned |> filter(sex ==  2)
 gss2018_cleaned <- gss2018_cleaned |> filter(sex ==  2)
 gss2021_cleaned <- gss2021_cleaned |> filter(sex ==  2)
-
-### We want to drop the spwrksta column now since it is no longer relevant ###
-
-gss2000_cleaned <- gss2000_cleaned |> select(-c(spwrksta))
-gss2002_cleaned <- gss2002_cleaned |> select(-c(spwrksta))
-gss2004_cleaned <- gss2004_cleaned |> select(-c(spwrksta))
-gss2006_cleaned <- gss2006_cleaned |> select(-c(spwrksta))
-gss2008_cleaned <- gss2008_cleaned |> select(-c(spwrksta))
-gss2010_cleaned <- gss2010_cleaned |> select(-c(spwrksta))
-gss2012_cleaned <- gss2012_cleaned |> select(-c(spwrksta))
-gss2014_cleaned <- gss2014_cleaned |> select(-c(spwrksta))
-gss2016_cleaned <- gss2016_cleaned |> select(-c(spwrksta))
-gss2018_cleaned <- gss2018_cleaned |> select(-c(spwrksta))
-gss2021_cleaned <- gss2021_cleaned |> select(-c(spwrksta))
 
 ### Add years to each cleaned dataset ###
 year_2000 <- c(rep("2000", 1588))

@@ -17,7 +17,6 @@ set.seed(383)
 ## Focused on simulating a data set that covers occupational prestige level (percentage 10-89)
 ## and highest level of education (values from 0-20)
 ## and the happiness level of the participant (1-3) 
-## and if any wives were housewives (1-8, looking for value 7)
 simulated_educ_ocpres_data <- tibble(
   Highest_Education_Level = c(
     runif(n = 1000, min = 1, max = 21) |> floor()
@@ -27,9 +26,6 @@ simulated_educ_ocpres_data <- tibble(
   ),
   Happiness = c(
     runif(n = 1000, min = 1, max = 4) |> floor()
-  ),
-  Housewife = c(
-    runif(n = 1000, min = 1, max = 9) |> floor()
   )
 )
 
