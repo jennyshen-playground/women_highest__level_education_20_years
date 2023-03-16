@@ -1,11 +1,11 @@
 ---
-title: "Women work education happiness lol"
-subtitle: "insert here lol"
+title: "Increased Education Level of Women Associates with Higher Occupation Prestige and Happiness"
+subtitle: "An Analysis of Potential Factors From 2000 to 2021"
 author: 
   - Jenny Shen
   - Joyce Xuan
   - Jason Ngo
-thanks: "Code and data are available at: INSERT GITHUB."
+thanks: "Code and data are available at: https://github.com/jennyshen-playground/women_highest__level_education_20_years.git."
 date: "`r Sys.time()`"
 date-format: "D MMMM YYYY"
 format: 
