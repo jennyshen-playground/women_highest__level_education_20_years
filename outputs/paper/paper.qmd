@@ -1,5 +1,5 @@
 ---
-title: "Increased Education Level of Women Associates with Higher Occupation Prestige and Happiness"
+title: "Increased Education Level of Women Associates with Higher Occupational Prestige and Happiness"
 subtitle: "An Analysis of Potential Factors From 2000 to 2021"
 author: 
   - Jenny Shen
@@ -43,7 +43,19 @@ merged_gss <- read.csv(here::here("outputs/data/merged_gss.csv"))
 
 # Introduction
 
-text goes here
+“The education of girls is the most powerful investment we can make in our collective future.” 
+
+-Carrie Chapman Catt, Women’s Suffrage Leader
+
+
+Improving the education level of women is a critical factor in driving social and economic development. Over the past two decades, women have gained an increase in access to higher education. In this paper, we will examine the trend of women’s level of education in the United States from 2000 to 2021, as well as women’s occupational prestige and happiness. Our findings show that while there were slight fluctuations in some years, overall, women’s education level, occupational prestige scores, and happiness all increased through this time period. 
+
+We will draw data from the US General Social Survey (henceforth GSS), which is available through the GSS website. Our respondents of interest are participants over 18 years of age who self-identify as women. 
+
+This exploration is critical as the data can help government officials and policy makers play an informed role in influencing the use of public policies to improve education and career opportunities for women. Showing the importance of women’s education is also important for economic development, as women with higher education are more likely to find formal employment, earn higher wages, and contribute to their country’s economy and workforce. 
+
+In section 1, we discuss the source of data used in this paper, the strengths and weaknesses of GSS, methodologies that follow it, and data terminology. Section 2 discusses the results from our graphs, including the trend over the 20 year period. In section 3, we explore the factors that contribute to women’s education levels and career prestige. In section 4, we provide an optional survey that we conducted to gather more information about women’s educational attainment and career aspirations. The final section provides an analysis of the bias and ethical concerns, and weakness and steps. 
+
 
 # Data
 
