@@ -4,8 +4,7 @@
 # Data: March 10, 2023
 # Contact: jason_ngo@live.com
 # License: MIT
-# Pre-requisites:
-# Any other information needed?: None
+# Pre-requisites: Access to the 2021 GSS codebook to understand the recoding of values.
 
 
 #### Workspace setup ####

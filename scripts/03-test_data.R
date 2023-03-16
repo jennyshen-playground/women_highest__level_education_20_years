@@ -4,8 +4,7 @@
 # Data: March 10, 2023
 # Contact: jason_ngo@live.com
 # License: MIT
-# Pre-requisites:
-# Any other information needed?: None
+# Pre-requisites: To have ran the cleaning script to test the cleaned datasets
 
 
 #### Workspace setup ####

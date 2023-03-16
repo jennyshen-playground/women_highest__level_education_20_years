@@ -4,9 +4,7 @@
 # Data: March 10, 2023
 # Contact: jason_ngo@live.com
 # License: MIT
-# Pre-requisites:
-# Any other information needed?: None
-
+# Pre-requisites: An internet connection to access the GSS website and to download the datasets.
 
 #### Workspace setup ####
 library(tidyverse)

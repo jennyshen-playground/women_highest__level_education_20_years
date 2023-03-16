@@ -4,8 +4,7 @@
 # Data: March 10, 2023
 # Contact: jason_ngo@live.com
 # License: MIT
-# Pre-requisites:
-# Any other information needed?: None
+# Pre-requisites: To access the codebook of the 2021 GSS to better understand the data.
 
 #### Workspace setup ####
 library(tidyverse)

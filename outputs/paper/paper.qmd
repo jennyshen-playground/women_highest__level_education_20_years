@@ -1,5 +1,5 @@
 ---
-title: "Increased Education Level of Women Associates with Higher Occupational Prestige and Happiness"
+title: "Increased Education Level of Women in the U.S. Associates with Higher Occupational Prestige and Happiness"
 subtitle: "An Analysis of Potential Factors From 2000 to 2021"
 author: 
   - Jenny Shen
