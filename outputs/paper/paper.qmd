@@ -156,7 +156,7 @@ In @fig-3, the counts of \"Very Happy\" respondents peaked in 2000, 2006 and 202
 
 # Results
 
-sum up all 3 graphs here
+Figure 1 shows an increase in mean highest education level, Figure 2 shows an increase in mean occupational prestige percentage and Figure 3 shows an increase in overall happiness. This means that at a slow and steady rate, women are acquiring better education, getting better jobs and becoming happier. The findings show that there is a positive relationship between job prestige, education and happiness. Just do these three factors tie into one another?
 
 # Discussion
 
