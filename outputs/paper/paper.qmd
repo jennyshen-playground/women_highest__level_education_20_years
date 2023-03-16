@@ -12,7 +12,7 @@ format:
   pdf:
     documentclass: article
     geometry: margin = 1in
-    abstract: "hello"
+    abstract: "This paper utilizes data from the US General Social Survey to discuss women's level of education from 2000 to 2021. We find that the mean levels of education among surveyed women increased, as did their occupational prestige score and level of happiness. These findings matter as they enable us to understand the importance of women's access to higher education. The rise in occupational prestige scores can enhance economic development, and associates with increased levels of happiness. This suggests that advanced education leads to well-respected careers that generate happiness"
 number-sections: true
 bibliography: references.bib
 ---
@@ -129,7 +129,9 @@ text goes here
 #| echo: false
 #| warning: false
 
-merged_gss |> group_by(Year) |> count(Happiness) |>
+library(tidyverse)
+
+merged_gss |> group_by(Year) |> filter(!is.na(Happiness)) |> count(Happiness) |>
   ggplot(aes(x = Year, y = n, fill = Happiness)) +
   geom_col(position = "dodge") +
   theme(axis.text.x = element_text(angle = 45, vjust = 0.9, hjust=1)) +
