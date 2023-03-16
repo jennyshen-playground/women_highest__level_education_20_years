@@ -12,7 +12,7 @@ format:
   pdf:
     documentclass: article
     geometry: margin = 1in
-    abstract: "This paper utilizes data from the US General Social Survey to discuss women's level of education from 2000 to 2021. We find that the mean levels of education among surveyed women increased, as did their occupational prestige score and level of happiness. These findings matter as they enable us to understand the importance of women's access to higher education. The rise in occupational prestige scores can enhance economic development, and associates with increased levels of happiness. This suggests that advanced education leads to well-respected careers that generate happiness"
+    abstract: "This paper utilizes data from the US General Social Survey to discuss women's level of education from 2000 to 2021. We find that the mean levels of education among surveyed women increased, as did their occupational prestige score and level of happiness. These findings matter as they enable us to understand the importance of women's access to higher education. The rise in occupational prestige scores can enhance economic development, and also associates with increased levels of happiness. This suggests that advanced education leads to well-respected careers that generate happiness."
 number-sections: true
 bibliography: references.bib
 ---
@@ -43,23 +43,23 @@ merged_gss <- read.csv(here::here("outputs/data/merged_gss.csv"))
 
 # Introduction
 
-"The education of girls is the most powerful investment we can make in our collective future."
-
--Carrie Chapman Catt, Women's Suffrage Leader
+> "The education of girls is the most powerful investment we can make in our collective future."
+>
+> --- Carrie Chapman Catt, Women's Suffrage Leader
 
 Improving the education level of women is a critical factor in driving social and economic development. Over the past two decades, women have gained an increase in access to higher education. In this paper, we will examine the trend of women's level of education in the United States from 2000 to 2021, as well as women's occupational prestige and happiness. Our findings show that while there were slight fluctuations in some years, overall, women's education level, occupational prestige scores, and happiness all increased through this time period.
 
-We will draw data from the US General Social Survey (henceforth GSS), which is available through the GSS website. Our respondents of interest are participants over 18 years of age who self-identify as women.
+We will draw data from the US General Social Survey (henceforth GSS), which is available through the GSS website [@citeGSS]. Our respondents of interest are participants over 18 years of age who self-identify as women.
 
 This exploration is critical as the data can help government officials and policy makers play an informed role in influencing the use of public policies to improve education and career opportunities for women. Showing the importance of women's education is also important for economic development, as women with higher education are more likely to find formal employment, earn higher wages, and contribute to their country's economy and workforce.
 
-In section 1, we discuss the source of data used in this paper, the strengths and weaknesses of GSS, methodologies that follow it, and data terminology. Section 2 discusses the results from our graphs, including the trend over the 20 year period. In section 3, we explore the factors that contribute to women's education levels and career prestige. In section 4, we provide an optional survey that we conducted to gather more information about women's educational attainment and career aspirations. The final section provides an analysis of the bias and ethical concerns, and weakness and steps.
+In section 1, we discuss the source of data used in this paper, the strengths and weaknesses of GSS, methodologies that follow it, and data terminology. Section 2 discusses the results from our graphs, including the trend over the 20 year period. In section 3, we explore the factors that contribute to women's education levels and career prestige. In section 4, we provide an optional survey that we conducted to gather more information about women's educational attainment and career aspirations. The final section provides an analysis of the bias and ethical concerns, as well as weaknesses and next steps.
 
 # Data
 
 ## Data Source and Methodology
 
-The data used in this paper is obtained from the US General Social Survey (henceforth GSS), and is available through the GSS website. Funded by the National Science Foundation and operated by the National Opinion Research Centre (NORC), the GSS has collected data regarding social change and growth complexity of American society since 1972. It keeps records of the practices, concerns, experiences, and attitudes of US residents. The survey randomly selects participants across the United States to take part in the survey. From those participants, only those that volunteer to participate are surveyed. Participants come from a mix of rural, urban and suburban areas. The survey is conducted face-to-face through an in-person interview conducted by staff at NORC. The survey itself takes around 90 minutes to complete. However, due to the pandemic, NORC had to change their collection methodology: the latest GSS was conducted through website and telephone interviews.
+The data used in this paper is obtained from the US General Social Survey, and is available through the GSS website. Funded by the National Science Foundation and operated by the National Opinion Research Centre (NORC), the GSS has collected data regarding social change and growth complexity of American society since 1972. It keeps records of the practices, concerns, experiences, and attitudes of US residents. The survey randomly selects participants across the United States to take part in the survey. From those participants, only those that volunteer to participate are surveyed. Participants come from a mix of rural, urban and suburban areas. The survey is conducted face-to-face through an in-person interview conducted by staff at NORC. The survey itself takes around 90 minutes to complete. However, due to the pandemic, NORC had to change their collection methodology: the latest GSS was conducted through website and telephone interviews.
 
 The survey received responses from 2817 respondents in 2000, 2348 respondents in 2018, and 4032 respondents in 2021, with the increase in the latter year being attributed to the changing survey methods due to the COVID-19 pandemic. Over the period spanning from 2000 to 2021, the survey averaged 2793.6 respondents across 11 surveys. The number of variables recorded in the survey was 1161 in 2000, 1065 in 2018, and 735 in 2021. On average, there were 883.67 variables recorded in the survey over the recorded three years (2000, 2018, and 2021).
 
