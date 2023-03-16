@@ -85,23 +85,21 @@ Respondents of the GSS were asked to provide the highest level of education usin
 
 ```{r}
 #| label: fig-1
-#| fig-cap: displays that the overall increase in the mean education level percentage of women over 20 years from 2000 to 2021 is from 13.0 to 13.7.
+#| fig-cap: A graph detailing that the overall increase in the mean highest education level percentage of women over a 20 year period from 2000 to 2021 is from 13.0 to 13.7.
 #| echo: false
 #| warning: false
 
-library(tidyverse) 
-
 ## mean education level over 20 yrs ##
 
-merged_gss |> group_by(Year) |> summarize(mean= mean(Highest_Educ_Level, na.rm = TRUE)) |>
+merged_gss |> group_by(Year) |> summarize(mean = mean(Highest_Educ_Level, na.rm = TRUE)) |>
   ggplot(aes(x = Year, y = mean)) +
   geom_line(group = 1) +
   theme(axis.text.x = element_text(angle = 45, vjust = 0.9, hjust=1)) +
   labs(
-    title = "Mean highest education level of Women over 20 Years",
+    title = "Mean Highest Education Level of Women Over 20 Years",
     x = "Year",
-    y = "Mean Educ Level %"
-  ) 
+    y = "Mean Educ Level %" 
+  )
 ```
 
 The overall trend of the plot shows a positive upward trajectory in women's education levels over the years, with fluctuations. As shown in @fig-1, the vertical axis shows the percentage of mean education level, while the horizontal axis displays the years.The data reveals significant fluctuations in the mean education level of women over the years, with the education levels gradually increasing over time. The overall increase from 2000 to 2021 is from 13.0 to 13.7.In particular, the mean education level percentage rose from 13.0 to 13.6 between 2000 and 2004, declined in 2006, and has been rising ever since. Overall, this trend highlights the potential benefits of providing access to education for women and demonstrates the need to continue investing in education to ensure that women can reach their full potential and the need to address the barriers that still exist to achieve gender equality in education.
@@ -112,7 +110,7 @@ The overall trend of the plot shows a positive upward trajectory in women's educ
 
 ```{r}
 #| label: fig-2
-#| fig-cap: caption goes here
+#| fig-cap: A display showing the rise of the mean occupational prestige in women ranging from years 2000 - 2021.
 #| echo: false
 #| warning: false
 
@@ -123,7 +121,7 @@ merged_gss |> group_by(Year) |> summarize(mean = mean(Occupational_Prestige_Pct,
   geom_line(group = 1) +
   theme(axis.text.x = element_text(angle = 45, vjust = 0.9, hjust=1)) +
   labs(
-    title = "Occupational Prestige of Women over 20 Years",
+    title = "Mean Occupational Prestige of Women over 20 Years",
     x = "Year",
     y = "Mean Occ. Prest. %"
   ) 
@@ -137,24 +135,22 @@ merged_gss |> group_by(Year) |> summarize(mean = mean(Occupational_Prestige_Pct,
 
 ```{r}
 #| label: fig-3
-#| fig-cap: caption goes here
+#| fig-cap: A graph of answers to the Happiness question by women ranging from the years 2000 - 2021
 #| echo: false
 #| warning: false
-
-library(tidyverse)
 
 merged_gss |> group_by(Year) |> filter(!is.na(Happiness)) |> count(Happiness) |>
   ggplot(aes(x = Year, y = n, fill = Happiness)) +
   geom_col(position = "dodge") +
   theme(axis.text.x = element_text(angle = 45, vjust = 0.9, hjust=1)) +
   labs(
-    title = "Womens Happiness over 20 Years",
+    title = "A Count of Womens Happiness over 20 Years",
     x = "Year",
     y = "Count"
   )
 ```
 
-In @fig-3, the counts of \"Very Happy\" respondents peaked in 2000, 2006 and 2021. In 2008, \"Very Happy\" respondents dropped but steadily increased in the years afterwards. A similar trend can be observed with \"Pretty Happy\" respondents, with peaks in 2000 and 2006, and a steady increase since 2008. There is a spike in \"Not Too Happy\" responses in 2006, where both mean education level and mean occupational prestige dropped. However, where there is another spike in \"Not Too Happy\" responses in 2018, there is no correlating drop in mean occupational prestige and education level. Figures Y and Z show steady growth in their respective display values, whereas in Figure X, \"Pretty Happy\" and \"Very Happy\" counts experience similar growth but \"Not Too Happy\" counts fluctuate per year.
+In @fig-3, the counts of \"Very Happy\" respondents peaked in 2000, 2006 and 2021. In 2008, \"Very Happy\" respondents dropped but steadily increased in the years afterwards. A similar trend can be observed with \"Pretty Happy\" respondents, with peaks in 2000 and 2006, and a steady increase since 2008. There is a spike in \"Not Too Happy\" responses in 2006, where both mean education level and mean occupational prestige also dropped. However, where there is another spike in \"Not Too Happy\" responses in 2018, there is no correlating drop in mean occupational prestige and education level. @fig-1 and @fig-2 show steady growth in their respective values, whereas in @fig-3 \"Pretty Happy\" and \"Very Happy\" counts experience similar growth but \"Not Too Happy\" counts fluctuate per year.
 
 \newpage
 
@@ -188,11 +184,9 @@ Our results from @fig-2 indicate that the mean occupational prestige score incre
 
 ## Womens Happiness Discussion
 
-Figures X, Y and Z show growth in their values, with Figure X specifically showing growth with the values correlated to being happy. We can reasonably deduce that there is some positive relationship between happiness, the prestige of a woman's occupation and a woman\'s peak education level.
+@fig-1, @fig-2 and @fig-3 show growth in their values, with @fig-3 specifically showing growth with the values correlated to being happy. We can reasonably deduce that there is some positive relationship between happiness, the prestige of a woman's occupation and a woman\'s peak education level. From [@citeLinked], the work options for women have expanded due to an increase in education and societal factors. An increase in work options means that women are shifting into more professional jobs rather than clerical ones. These factors lead to an increase in women's happiness overall.
 
-https://www.ellevatenetwork.com/articles/9201-eight-surprising-reasons-women-are-actually-happier-at-work-than-men
-
-From ABOVE CITATION and 2 CITATIONS ABOVE a factor for happiness in working women is the demolishment of male-favored gendered rules in the workplace. In the workforce, the old-fashioned gendered rules dictate that men are expected to succeed and women are not. However, when women succeed, those gendered rules begin to crumble and their success is seen as a victory. Over a 20 year period, working women\'s happiness may not just be correlated to their job pedigree, but also due to the collapse of the negative stigma towards women in work.
+From [@citeElle], a factor for happiness in working women is the demolishment of male-favored gendered rules in the workplace. In the workforce, the old-fashioned gendered rules dictate that men are expected to succeed and women are not. However, when women succeed, those gendered rules begin to crumble and their success is seen as a victory. Over a 20 year period, working women's happiness may not just be correlated to their job pedigree, but also due to the collapse of the negative stigma towards women in work.
 
 ## Biases and Ethical Concerns
 
